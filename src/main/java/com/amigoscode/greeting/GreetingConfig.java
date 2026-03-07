@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GreetingConfig {
 
-    // Exercise: 03 - Create a @Bean("greetingMessage") method that returns "Hello"
+    // TODO: 03 - Create a @Bean("greetingMessage") method that returns "Hello"
     //  Add the @Bean annotation with the name "greetingMessage"
     //  The method should return a String with the value "Hello"
 

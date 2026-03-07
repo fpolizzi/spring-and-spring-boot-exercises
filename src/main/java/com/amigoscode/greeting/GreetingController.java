@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    // Exercise: 02 - Add a private final GreetingService field
+    // TODO: 02 - Add a private final GreetingService field
     //  Add a constructor that accepts GreetingService and assigns it to the field
     //  Then use greetingService.greet(name) in the greet() method below
 

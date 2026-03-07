@@ -1,65 +1,66 @@
-# Amigoscode Spring Boot Exercises
+# Spring Framework - Exercises
 
-Guided hands-on exercises for the Spring Boot learning path on
+Hands-on exercises for the **Spring Framework** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
-## Tech Stack
+## What You'll Practice
 
-- Java 25
-- Spring Boot 4
-- H2 In-Memory Database
-- Maven
+- Dependency Injection and Inversion of Control
+- Creating beans with `@Component` and `@Bean`
+- Constructor injection
+- Bean lifecycle hooks (`@PostConstruct`, `@PreDestroy`)
+- Stereotype annotations (`@Service`, `@Repository`)
 
-## Courses
+## Getting Started
 
-This repository contains exercises for the following courses:
+1. Open the project in IntelliJ IDEA
+2. Open the TODO tool window: **View > Tool Windows > TODO**
+3. Follow the exercises below in order
 
-| Branch | Course | TODOs |
-|--------|--------|-------|
-| `spring-framework-exercises` | Spring Framework | 5 |
-| `spring-boot-exercises` | Spring Boot | 6 |
-| `spring-data-jpa-exercises` | Spring Data JPA | 25 |
-| `building-apis-with-spring-boot-exercises` | Building APIs with Spring Boot | 20 |
-| `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
+## Exercises
 
-Each course has a matching `-solutions` branch with completed code.
+### TODO: 01 - Create a bean with `@Component`
+**File:** `greeting/GreetingService.java`
 
-## How to Use
+Annotate `GreetingService` with `@Component` so Spring manages it as a bean.
 
-1. Pick a course and checkout the exercises branch:
-   ```bash
-   git checkout spring-boot-exercises
-   ```
-2. Open the project in IntelliJ IDEA
-3. Open the TODO tool window: **View > Tool Windows > TODO**
-4. Follow the TODOs in order - each one builds on the previous
-5. Stuck? Check the solutions branch:
-   ```bash
-   git checkout spring-boot-solutions
-   ```
+---
 
-## How TODOs Work
+### TODO: 02 - Inject GreetingService using constructor injection
+**File:** `greeting/GreetingController.java`
 
-Every exercise is marked with a numbered TODO comment:
+Add a `private final GreetingService` field and inject it via the constructor. Use it in the `greet()` method to return `greetingService.greet(name)`.
 
-```java
-// TODO: 1 - Create a GET endpoint mapped to "/api/v1/books"
-//  that returns all books from the database
+---
+
+### TODO: 03 - Define a String bean with `@Bean` and `@Qualifier`
+**File:** `greeting/GreetingConfig.java`
+
+Create a `@Bean("greetingMessage")` method that returns `"Hello"`. Then in `GreetingService`, add `@Qualifier("greetingMessage")` to the `String` constructor parameter.
+
+---
+
+### TODO: 04 - Add lifecycle hooks
+**File:** `greeting/GreetingService.java`
+
+Add a method annotated with `@PostConstruct` that prints `"GreetingService has been initialized"`. Add a method annotated with `@PreDestroy` that prints `"GreetingService is being destroyed"`.
+
+---
+
+### TODO: 05 - Use stereotype annotations and wiring
+**Files:** `user/UserRepository.java` and `user/UserService.java`
+
+- Annotate `UserRepository` with `@Repository`
+- Annotate `UserService` with `@Service`
+- Inject `UserRepository` into `UserService` via constructor injection
+- Use the injected repository in `getAllUsers()` to return `userRepository.findAllUsers()`
+
+## Solutions
+
+```bash
+git checkout spring-framework-solutions
 ```
-
-IntelliJ will list all TODOs in order so you can work through them step by step.
-
-## Prerequisites
-
-Each course builds on the previous. We recommend this order:
-
-1. Spring Framework
-2. Spring Boot
-3. Spring Data JPA
-4. Building APIs with Spring Boot
-5. Advanced Spring Boot
 
 ## Community
 
-Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help,
-share your progress, and connect with other learners.
+Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help and share your progress.

@@ -1,10 +1,10 @@
 package com.amigoscode.greeting;
 
-// Exercise: 01 - Add @Component annotation to this class so Spring manages it as a bean
+// TODO: 01 - Add @Component annotation to this class so Spring manages it as a bean
 
-// Exercise: 03 - Add @Qualifier("greetingMessage") to the constructor parameter
+// TODO: 03 - Add @Qualifier("greetingMessage") to the constructor parameter
 
-// Exercise: 04 - Add @PostConstruct and @PreDestroy lifecycle hooks
+// TODO: 04 - Add @PostConstruct and @PreDestroy lifecycle hooks
 
 public class GreetingService {
 

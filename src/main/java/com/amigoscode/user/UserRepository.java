@@ -2,7 +2,7 @@ package com.amigoscode.user;
 
 import java.util.List;
 
-// Exercise: 05 - Add @Repository annotation to this class
+// TODO: 05 - Add @Repository annotation to this class
 
 public class UserRepository {
 

@@ -2,7 +2,7 @@ package com.amigoscode.user;
 
 import java.util.List;
 
-// Exercise: 05 - Add @Service annotation to this class
+// TODO: 05 - Add @Service annotation to this class
 //  Inject UserRepository via constructor injection
 //  Use the injected repository in getAllUsers()
 
