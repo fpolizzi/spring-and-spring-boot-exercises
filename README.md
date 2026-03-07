@@ -14,13 +14,13 @@ Guided hands-on exercises for the Spring Boot learning path on
 
 This repository contains exercises for the following courses:
 
-| Branch | Course | Exercises |
-|--------|--------|-----------|
-| `spring-framework-exercises` | Spring Framework | 5 |
-| `spring-boot-exercises` | Spring Boot | 6 |
-| `spring-data-jpa-exercises` | Spring Data JPA | 25 |
-| `building-apis-with-spring-boot-exercises` | Building APIs with Spring Boot | 20 |
-| `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
+| # | Branch | Course | Exercises |
+|---|--------|--------|-----------|
+| 1 | `spring-framework-exercises` | Spring Framework | 5 |
+| 2 | `spring-boot-exercises` | Spring Boot | 6 |
+| 3 | `building-apis-with-spring-boot-exercises` | Building APIs with Spring Boot | 20 |
+| 4 | `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
+| 5 | `spring-data-jpa-exercises` | Spring Data JPA | 25 |
 
 Each course has a matching `-solutions` branch with completed code.
 
@@ -44,9 +44,9 @@ Each course builds on the previous. We recommend this order:
 
 1. Spring Framework
 2. Spring Boot
-3. Spring Data JPA
-4. Building APIs with Spring Boot
-5. Advanced Spring Boot
+3. Building APIs with Spring Boot
+4. Advanced Spring Boot
+5. Spring Data JPA
 
 ## Exercise Breakdown
 
@@ -74,39 +74,6 @@ Each course builds on the previous. We recommend this order:
 | 04 | GET book by ID | `book/BookController.java` |
 | 05 | POST a new book | `book/BookController.java` |
 | 06 | DELETE a book by ID | `book/BookController.java` |
-
-</details>
-
-<details>
-<summary><strong>Spring Data JPA (25 exercises)</strong></summary>
-
-| # | Topic | File |
-|---|-------|------|
-| 01 | `@Entity` and `@Id` | `student/Student.java` |
-| 02 | `@Column` and `@Table` constraints | `student/Student.java` |
-| 03 | Create `StudentRepository` | `student/StudentRepository.java` |
-| 04 | Save students and print count | `DataInitializer.java` |
-| 05 | Derived queries (`findByEmail`, `findByFirstNameAndLastName`) | `student/StudentRepository.java` |
-| 06 | More derived queries (`Between`, `Containing`, `GreaterThan`) | `student/StudentRepository.java` |
-| 07 | JPQL query with `@Query` | `student/StudentRepository.java` |
-| 08 | Native SQL query | `student/StudentRepository.java` |
-| 09 | `@Modifying` and `@Transactional` update query | `student/StudentRepository.java` |
-| 10 | Sorting with `Sort.by(...)` | `student/StudentController.java` |
-| 11 | Pagination with `Pageable` | `student/StudentController.java` |
-| 12 | `@OneToOne` with `@JoinColumn` | `card/StudentIdCard.java` |
-| 13 | Cascade and fetch type | `card/StudentIdCard.java` |
-| 14 | Bidirectional one-to-one (`mappedBy`) | `student/Student.java` |
-| 15 | `@OneToMany` relationship with Book | `student/Student.java` |
-| 16 | Bidirectional one-to-many (`@ManyToOne`) | `book/Book.java` |
-| 17 | Add/remove helper methods for Book | `student/Student.java` |
-| 18 | `@ManyToMany` with `@JoinTable` | `student/Student.java`, `course/Course.java` |
-| 19 | Add/remove helpers for Course | `student/Student.java` |
-| 20 | Soft delete (`@SQLDelete`, `@SQLRestriction`) | `student/Student.java` |
-| 21 | Auditing (`@CreatedDate`, `@LastModifiedDate`) | `student/Student.java` |
-| 22 | `AuditorAware` and `@EnableJpaAuditing` | `config/AuditingConfig.java` |
-| 23 | DTO projection | `student/StudentDTO.java`, `student/StudentController.java` |
-| 24 | `@Transactional` transfer | `account/AccountService.java` |
-| 25 | Test transaction rollback | `account/AccountService.java` |
 
 </details>
 
@@ -163,6 +130,39 @@ Each course builds on the previous. We recommend this order:
 | 18 | Spring Actuator | `application.yml` |
 | 19 | Spring Security with Basic Auth | `security/SecurityConfig.java` |
 | 20 | In-memory user with `BCryptPasswordEncoder` | `security/SecurityConfig.java` |
+
+</details>
+
+<details>
+<summary><strong>Spring Data JPA (25 exercises)</strong></summary>
+
+| # | Topic | File |
+|---|-------|------|
+| 01 | `@Entity` and `@Id` | `student/Student.java` |
+| 02 | `@Column` and `@Table` constraints | `student/Student.java` |
+| 03 | Create `StudentRepository` | `student/StudentRepository.java` |
+| 04 | Save students and print count | `DataInitializer.java` |
+| 05 | Derived queries (`findByEmail`, `findByFirstNameAndLastName`) | `student/StudentRepository.java` |
+| 06 | More derived queries (`Between`, `Containing`, `GreaterThan`) | `student/StudentRepository.java` |
+| 07 | JPQL query with `@Query` | `student/StudentRepository.java` |
+| 08 | Native SQL query | `student/StudentRepository.java` |
+| 09 | `@Modifying` and `@Transactional` update query | `student/StudentRepository.java` |
+| 10 | Sorting with `Sort.by(...)` | `student/StudentController.java` |
+| 11 | Pagination with `Pageable` | `student/StudentController.java` |
+| 12 | `@OneToOne` with `@JoinColumn` | `card/StudentIdCard.java` |
+| 13 | Cascade and fetch type | `card/StudentIdCard.java` |
+| 14 | Bidirectional one-to-one (`mappedBy`) | `student/Student.java` |
+| 15 | `@OneToMany` relationship with Book | `student/Student.java` |
+| 16 | Bidirectional one-to-many (`@ManyToOne`) | `book/Book.java` |
+| 17 | Add/remove helper methods for Book | `student/Student.java` |
+| 18 | `@ManyToMany` with `@JoinTable` | `student/Student.java`, `course/Course.java` |
+| 19 | Add/remove helpers for Course | `student/Student.java` |
+| 20 | Soft delete (`@SQLDelete`, `@SQLRestriction`) | `student/Student.java` |
+| 21 | Auditing (`@CreatedDate`, `@LastModifiedDate`) | `student/Student.java` |
+| 22 | `AuditorAware` and `@EnableJpaAuditing` | `config/AuditingConfig.java` |
+| 23 | DTO projection | `student/StudentDTO.java`, `student/StudentController.java` |
+| 24 | `@Transactional` transfer | `account/AccountService.java` |
+| 25 | Test transaction rollback | `account/AccountService.java` |
 
 </details>
 
