@@ -40,6 +40,13 @@ Each course has a matching `-solutions` branch with completed code.
 
 ## Prerequisites
 
+**Java 25 is required.** This project will not compile with older Java versions. Make sure you have Java 25 installed before starting.
+
+You can check your Java version with:
+```bash
+java -version
+```
+
 Each course builds on the previous. We recommend this order:
 
 1. Spring Framework
