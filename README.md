@@ -1,65 +1,62 @@
-# Amigoscode Spring Boot Exercises
+# Building APIs with Spring Boot - Exercises
 
-Guided hands-on exercises for the Spring Boot learning path on
+Hands-on exercises for the **Building APIs with Spring Boot** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
-## Tech Stack
+## What You'll Practice
 
-- Java 25
-- Spring Boot 4
-- H2 In-Memory Database
-- Maven
+- Building REST endpoints with Spring MVC
+- Path variables, query parameters, and request bodies
+- ResponseEntity and HTTP status codes
+- N-Tier architecture (Controller > Service > Repository)
+- JSON serialization with Jackson
+- Filters and functional endpoints
+- Embedded web server configuration
 
-## Courses
+## Reference Code
 
-This repository contains exercises for the following courses:
+The `Customer` domain (`CustomerController`, `CustomerService`, `CustomerRepository`)
+is fully implemented as a working reference. Use it as a guide when building the
+`Order` domain.
 
-| Branch | Course | TODOs |
-|--------|--------|-------|
-| `spring-framework-exercises` | Spring Framework | 5 |
-| `spring-boot-exercises` | Spring Boot | 6 |
-| `spring-data-jpa-exercises` | Spring Data JPA | 25 |
-| `building-apis-with-spring-boot-exercises` | Building APIs with Spring Boot | 20 |
-| `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
+## Exercises (20 TODOs)
 
-Each course has a matching `-solutions` branch with completed code.
+| # | Topic |
+|---|-------|
+| 1 | First endpoint |
+| 2 | Return an object |
+| 3 | Return a list |
+| 4 | `@PathVariable` |
+| 5 | `@RequestParam` |
+| 6 | `@PostMapping` |
+| 7 | `@PutMapping` |
+| 8 | `@DeleteMapping` |
+| 9 | `@RequestMapping` at class level |
+| 10 | `ResponseEntity` |
+| 11 | Service layer |
+| 12 | Repository layer |
+| 13 | Wire layers with constructor injection |
+| 14 | `@JsonProperty` |
+| 15 | `@JsonIgnore` |
+| 16 | Custom serialization |
+| 17 | Logging filter |
+| 18 | Functional endpoint |
+| 19 | Change embedded server |
+| 20 | Configure server properties |
 
-## How to Use
+## Getting Started
 
-1. Pick a course and checkout the exercises branch:
-   ```bash
-   git checkout spring-boot-exercises
-   ```
-2. Open the project in IntelliJ IDEA
-3. Open the TODO tool window: **View > Tool Windows > TODO**
-4. Follow the TODOs in order - each one builds on the previous
-5. Stuck? Check the solutions branch:
-   ```bash
-   git checkout spring-boot-solutions
-   ```
+1. Open the project in IntelliJ IDEA
+2. Open the TODO tool window: **View > Tool Windows > TODO**
+3. Start at TODO 1 and work your way through
 
-## How TODOs Work
+## Solutions
 
-Every exercise is marked with a numbered TODO comment:
-
-```java
-// TODO: 1 - Create a GET endpoint mapped to "/api/v1/books"
-//  that returns all books from the database
+```bash
+git checkout building-apis-with-spring-boot-solutions
 ```
-
-IntelliJ will list all TODOs in order so you can work through them step by step.
-
-## Prerequisites
-
-Each course builds on the previous. We recommend this order:
-
-1. Spring Framework
-2. Spring Boot
-3. Spring Data JPA
-4. Building APIs with Spring Boot
-5. Advanced Spring Boot
 
 ## Community
 
-Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help,
-share your progress, and connect with other learners.
+Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help
+and share your progress.
