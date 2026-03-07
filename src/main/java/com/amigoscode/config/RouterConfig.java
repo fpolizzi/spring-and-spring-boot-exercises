@@ -1,6 +1,6 @@
 package com.amigoscode.config;
 
-// Exercise: 18 - Create a functional endpoint:
+// TODO: 18 - Create a functional endpoint:
 //  - Annotate this class with @Configuration
 //  - Create a @Bean method that returns RouterFunction<ServerResponse>
 //  - Define a GET route for "/api/v1/orders/summary"

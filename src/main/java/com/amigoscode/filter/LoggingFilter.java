@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-// Exercise: 17 - Implement a logging filter:
+// TODO: 17 - Implement a logging filter:
 //  - Annotate this class with @Component
 //  - Implement the Filter interface (jakarta.servlet.Filter)
 //  - Override the doFilter method

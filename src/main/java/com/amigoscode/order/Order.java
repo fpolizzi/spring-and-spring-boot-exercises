@@ -26,15 +26,15 @@ public class Order {
         this.internalNotes = internalNotes;
     }
 
-    // Exercise: 14 - Add @JsonProperty("order_date") to the orderDate field
+    // TODO: 14 - Add @JsonProperty("order_date") to the orderDate field
     //  so it appears as "order_date" in the JSON response
     //  Hint: look at how Customer uses @JsonProperty
 
-    // Exercise: 15 - Add @JsonIgnore to the internalNotes field
+    // TODO: 15 - Add @JsonIgnore to the internalNotes field
     //  so it is hidden from the JSON response
     //  Hint: look at how Customer uses @JsonIgnore
 
-    // Exercise: 16 - Add @JsonFormat(pattern = "dd-MM-yyyy") to the orderDate field
+    // TODO: 16 - Add @JsonFormat(pattern = "dd-MM-yyyy") to the orderDate field
     //  Add @JsonInclude(JsonInclude.Include.NON_NULL) to the class
 
     public Long getId() {

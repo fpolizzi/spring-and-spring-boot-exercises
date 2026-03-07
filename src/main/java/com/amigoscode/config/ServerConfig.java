@@ -1,6 +1,6 @@
 package com.amigoscode.config;
 
-// Exercise: 19 - Change the embedded web server from Tomcat to Jetty:
+// TODO: 19 - Change the embedded web server from Tomcat to Jetty:
 //  Open pom.xml and:
 //  1. Add an exclusion to spring-boot-starter-web to exclude spring-boot-starter-tomcat
 //  2. Add the spring-boot-starter-jetty dependency
@@ -20,7 +20,7 @@ package com.amigoscode.config;
 //        <artifactId>spring-boot-starter-jetty</artifactId>
 //    </dependency>
 
-// Exercise: 20 - Configure server properties in application.yml:
+// TODO: 20 - Configure server properties in application.yml:
 //  server:
 //    port: 9090
 //    servlet:
