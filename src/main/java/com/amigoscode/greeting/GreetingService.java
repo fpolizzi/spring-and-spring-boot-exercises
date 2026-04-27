@@ -20,5 +20,4 @@ public class GreetingService {
     public String greet(String name) {
         return greeting + ", " + name + "!";
     }
-
 }
