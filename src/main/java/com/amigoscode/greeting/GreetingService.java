@@ -4,8 +4,10 @@ package com.amigoscode.greeting;
 
 // DONE: 03 - Add @Qualifier("greetingMessage") to the constructor parameter
 
-// TODO: 04 - Add @PostConstruct and @PreDestroy lifecycle hooks
+// DONE: 04 - Add @PostConstruct and @PreDestroy lifecycle hooks
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -20,5 +22,17 @@ public class GreetingService {
 
     public String greet(String name) {
         return greeting + ", " + name + "!";
+    }
+
+    @PostConstruct
+    public void init() {
+
+        System.out.println("Initializing GreetingService");
+    }
+
+    @PreDestroy
+    public void destroy() {
+
+        System.out.println("Destroying GreetingService");
     }
 }
