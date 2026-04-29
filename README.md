@@ -1,18 +1,21 @@
-# Amigoscode Spring Boot Exercises
+# Spring Framework - Exercises
 
-Guided hands-on exercises for the Spring Boot learning path on
+Hands-on exercises for the **Spring Framework** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
-## Tech Stack
+## What You'll Practice
 
-- Java 25
-- Spring Boot 4
-- H2 In-Memory Database
-- Maven
+- Dependency Injection and Inversion of Control
+- Creating beans with `@Component` and `@Bean`
+- Constructor injection
+- Bean lifecycle hooks (`@PostConstruct`, `@PreDestroy`)
+- Stereotype annotations (`@Service`, `@Repository`)
 
-## Courses
+## Getting Started
 
-This repository contains exercises for the following courses:
+1. Open the project in IntelliJ IDEA
+2. Open the TODO tool window: **View > Tool Windows > TODO**
+3. Follow the exercises below in order
 
 | # | Branch | Course | Exercises |
 |---|--------|--------|-----------|
@@ -22,9 +25,10 @@ This repository contains exercises for the following courses:
 | 4 | `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
 | 5 | `spring-data-jpa-exercises` | Spring Data JPA | 25 |
 
-Each course has a matching `-solutions` branch with completed code.
+### TODO: 01 - Create a bean with `@Component`
+**File:** `greeting/GreetingService.java`
 
-## How to Use
+Annotate `GreetingService` with `@Component` so Spring manages it as a bean.
 
 1. Pick a course and checkout the exercises branch:
    ```bash
@@ -175,5 +179,4 @@ Each course builds on the previous. We recommend this order:
 
 ## Community
 
-Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help,
-share your progress, and connect with other learners.
+Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help and share your progress.
