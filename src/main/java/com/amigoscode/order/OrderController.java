@@ -3,6 +3,8 @@ package com.amigoscode.order;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+
 // TODO: 9 - Add @RequestMapping("/api/v1/orders") at the class level
 //  Then simplify all endpoint paths below (remove "/api/v1/orders" prefix)
 @RestController
@@ -19,10 +21,22 @@ public class OrderController {
         return "Welcome to the Orders API";
     }
 
-
-    // TODO: 2 - Create a GET endpoint mapped to "/api/v1/orders/sample"
+    // DONE: 2 - Create a GET endpoint mapped to "/api/v1/orders/sample"
     //  that returns a single hardcoded Order object
     //  Hint: new Order(1L, "Laptop", "PENDING", 999.99, "john@mail.com", LocalDate.now(), "rush")
+    @GetMapping("/api/v1/orders/sample")
+    public Order sample() {
+
+        Order sample = new Order(
+                1L,
+                "Laptop",
+                "PENDING",
+                999.99,
+                "john@mail.com",
+                LocalDate.now(), "rush");
+
+        return sample;
+    }
 
     // TODO: 3 - Create a GET endpoint mapped to "/api/v1/orders"
     //  that returns a hardcoded List of Order objects
