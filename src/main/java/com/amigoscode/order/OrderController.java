@@ -1,5 +1,6 @@
 package com.amigoscode.order;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 // TODO: 9 - Add @RequestMapping("/api/v1/orders") at the class level
@@ -10,8 +11,14 @@ public class OrderController {
     // TODO: 13 - Inject OrderService via constructor injection
     //  (replace direct data access with service calls)
 
-    // TODO: 1 - Create a GET endpoint mapped to "/api/v1/orders/welcome"
+    // DONE: 1 - Create a GET endpoint mapped to "/api/v1/orders/welcome"
     //  that returns the string "Welcome to the Orders API"
+    @GetMapping("/api/v1/orders/welcome")
+    public String welcome() {
+
+        return "Welcome to the Orders API";
+    }
+
 
     // TODO: 2 - Create a GET endpoint mapped to "/api/v1/orders/sample"
     //  that returns a single hardcoded Order object
