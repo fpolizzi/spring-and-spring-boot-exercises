@@ -1,10 +1,12 @@
 package com.amigoscode.order;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 // TODO: 9 - Add @RequestMapping("/api/v1/orders") at the class level
 //  Then simplify all endpoint paths below (remove "/api/v1/orders" prefix)
@@ -79,9 +81,28 @@ public class OrderController {
         return ordersList;
     }
 
-    // TODO: 4 - Create a GET endpoint mapped to "/api/v1/orders/{id}"
+    // DONE: 4 - Create a GET endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and returns an Order
-    //  For now, return a hardcoded Order with the given id
+    //  For now, return ((a hardcoded Order with the given id
+    @GetMapping("/api/v1/orders/{id}")
+    public Order getOrderById(@PathVariable Long id) {
+
+        Order order = new Order(
+                2L,
+                "Desktop",
+                "PENDING",
+                1599.99,
+                "mary@mail.com",
+                LocalDate.now(), "rush");
+
+        if (Objects.equals(order.getId(), id)) {
+
+            return order;
+        } else {
+
+            return null;
+        }
+    }
 
     // TODO: 5 - Create a GET endpoint mapped to "/api/v1/orders/filter"
     //  that takes a @RequestParam(required = false) String status
