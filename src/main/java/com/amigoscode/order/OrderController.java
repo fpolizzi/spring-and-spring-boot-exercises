@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.List;
 
 // TODO: 9 - Add @RequestMapping("/api/v1/orders") at the class level
 //  Then simplify all endpoint paths below (remove "/api/v1/orders" prefix)
@@ -38,9 +39,45 @@ public class OrderController {
         return sample;
     }
 
-    // TODO: 3 - Create a GET endpoint mapped to "/api/v1/orders"
+    // DONE: 3 - Create a GET endpoint mapped to "/api/v1/orders"
     //  that returns a hardcoded List of Order objects
     //  Hint: use List.of(...)
+    @GetMapping("/api/v1/orders")
+    public List<Order> orders() {
+
+        List ordersList = List.of(
+                new Order(
+                    1L,
+                    "Laptop",
+                    "PENDING",
+                    999.99,
+                    "john@mail.com",
+                    LocalDate.now(), "rush"),
+                new Order(
+                        2L,
+                        "Desktop",
+                        "PENDING",
+                        1599.99,
+                        "mary@mail.com",
+                        LocalDate.now(), "rush"),
+                new Order(
+                        3L,
+                        "Mouse",
+                        "PENDING",
+                        29.99,
+                        "anna@funmail.org",
+                        LocalDate.now(), "rush"),
+                new Order(
+                        4L,
+                        "Keyboard (wireless)",
+                        "PENDING",
+                        139.99,
+                        "harry@mailhost.eu",
+                        LocalDate.now(), "rush")
+                );
+
+        return ordersList;
+    }
 
     // TODO: 4 - Create a GET endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and returns an Order
