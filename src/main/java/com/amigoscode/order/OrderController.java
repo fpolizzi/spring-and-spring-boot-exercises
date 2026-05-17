@@ -3,6 +3,7 @@ package com.amigoscode.order;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,40 +13,40 @@ import java.util.Objects;
 public class OrderController {
 
     // create temporary a dummy ordersList
-    private static final List<Order> ordersList;
-
-    static {
-        ordersList = List.of(
-                new Order(
-                        1L,
-                        "Laptop",
-                        "PENDING",
-                        999.99,
-                        "john@mail.com",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        2L,
-                        "Desktop",
-                        "MANUAL_REVIEW",
-                        1599.99,
-                        "mary@mail.com",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        3L,
-                        "Mouse",
-                        "MANUAL_REVIEW",
-                        29.99,
-                        "anna@funmail.org",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        4L,
-                        "Keyboard (wireless)",
-                        "PENDING",
-                        139.99,
-                        "harry@mailhost.eu",
-                        LocalDate.now(), "rush")
-        );
-    }
+    private final List<Order> ordersList = new ArrayList<>(List.of(
+            new Order(
+                    1L,
+                    "Laptop",
+                    "PENDING",
+                    999.99,
+                    "john@mail.com",
+                    LocalDate.now(),
+                    "rush"),
+            new Order(
+                    2L,
+                    "Desktop",
+                    "MANUAL_REVIEW",
+                    1599.99,
+                    "mary@mail.com",
+                    LocalDate.now(),
+                    "rush"),
+            new Order(
+                    3L,
+                    "Mouse",
+                    "MANUAL_REVIEW",
+                    29.99,
+                    "anna@funmail.org",
+                    LocalDate.now(),
+                    "rush"),
+            new Order(
+                    4L,
+                    "Keyboard (wireless)",
+                    "PENDING",
+                    139.99,
+                    "harry@mailhost.eu",
+                    LocalDate.now(),
+                    "rush")
+    ));
 
     // TODO: 13 - Inject OrderService via constructor injection
     //  (replace direct data access with service calls)
@@ -70,7 +71,8 @@ public class OrderController {
                 "PENDING",
                 999.99,
                 "john@mail.com",
-                LocalDate.now(), "rush");
+                LocalDate.now(),
+                "rush");
 
         return sample;
     }
@@ -80,8 +82,6 @@ public class OrderController {
     //  Hint: use List.of(...)
     @GetMapping("/api/v1/orders")
     public List<Order> orders() {
-
-
 
         return ordersList;
     }
@@ -98,7 +98,8 @@ public class OrderController {
                 "PENDING",
                 1599.99,
                 "mary@mail.com",
-                LocalDate.now(), "rush");
+                LocalDate.now(),
+                "rush");
 
         if (Objects.equals(order.getId(), id)) {
 
@@ -125,7 +126,7 @@ public class OrderController {
         return ordersList;
     }
 
-    // TODO: 6 - Create a POST endpoint mapped to "/api/v1/orders"
+    // DONE: 6 - Create a POST endpoint mapped to "/api/v1/orders"
     //  that takes an Order @RequestBody and returns the saved order
     @PostMapping("/api/v1/orders")
     public Order createOrder(
