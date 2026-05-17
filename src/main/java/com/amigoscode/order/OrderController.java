@@ -1,9 +1,6 @@
 package com.amigoscode.order;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,6 +10,42 @@ import java.util.Objects;
 //  Then simplify all endpoint paths below (remove "/api/v1/orders" prefix)
 @RestController
 public class OrderController {
+
+    // create temporary a dummy ordersList
+    private static final List<Order> ordersList;
+
+    static {
+        ordersList = List.of(
+                new Order(
+                        1L,
+                        "Laptop",
+                        "PENDING",
+                        999.99,
+                        "john@mail.com",
+                        LocalDate.now(), "rush"),
+                new Order(
+                        2L,
+                        "Desktop",
+                        "MANUAL_REVIEW",
+                        1599.99,
+                        "mary@mail.com",
+                        LocalDate.now(), "rush"),
+                new Order(
+                        3L,
+                        "Mouse",
+                        "MANUAL_REVIEW",
+                        29.99,
+                        "anna@funmail.org",
+                        LocalDate.now(), "rush"),
+                new Order(
+                        4L,
+                        "Keyboard (wireless)",
+                        "PENDING",
+                        139.99,
+                        "harry@mailhost.eu",
+                        LocalDate.now(), "rush")
+        );
+    }
 
     // TODO: 13 - Inject OrderService via constructor injection
     //  (replace direct data access with service calls)
@@ -48,36 +81,7 @@ public class OrderController {
     @GetMapping("/api/v1/orders")
     public List<Order> orders() {
 
-        List ordersList = List.of(
-                new Order(
-                    1L,
-                    "Laptop",
-                    "PENDING",
-                    999.99,
-                    "john@mail.com",
-                    LocalDate.now(), "rush"),
-                new Order(
-                        2L,
-                        "Desktop",
-                        "PENDING",
-                        1599.99,
-                        "mary@mail.com",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        3L,
-                        "Mouse",
-                        "PENDING",
-                        29.99,
-                        "anna@funmail.org",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        4L,
-                        "Keyboard (wireless)",
-                        "PENDING",
-                        139.99,
-                        "harry@mailhost.eu",
-                        LocalDate.now(), "rush")
-                );
+
 
         return ordersList;
     }
@@ -112,37 +116,6 @@ public class OrderController {
     public List<Order> getOrdersByStatus(
             @RequestParam(required = false) String status) {
 
-        List<Order> ordersList = List.of(
-                new Order(
-                        1L,
-                        "Laptop",
-                        "PENDING",
-                        999.99,
-                        "john@mail.com",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        2L,
-                        "Desktop",
-                        "MANUAL_REVIEW",
-                        1599.99,
-                        "mary@mail.com",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        3L,
-                        "Mouse",
-                        "MANUAL_REVIEW",
-                        29.99,
-                        "anna@funmail.org",
-                        LocalDate.now(), "rush"),
-                new Order(
-                        4L,
-                        "Keyboard (wireless)",
-                        "PENDING",
-                        139.99,
-                        "harry@mailhost.eu",
-                        LocalDate.now(), "rush")
-        );
-
         if (status != null) {
             return ordersList.stream()
                     .filter(o -> o.getStatus().equalsIgnoreCase(status))
@@ -152,9 +125,14 @@ public class OrderController {
         return ordersList;
     }
 
-
     // TODO: 6 - Create a POST endpoint mapped to "/api/v1/orders"
     //  that takes an Order @RequestBody and returns the saved order
+    @PostMapping("/api/v1/orders")
+    public Order createOrder(
+            @RequestBody Order order) {
+
+        return order;
+    }
 
     // TODO: 7 - Create a PUT endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and @RequestBody Order
