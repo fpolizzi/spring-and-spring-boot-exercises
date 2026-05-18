@@ -155,13 +155,21 @@ public class OrderController {
         }
     }
 
-        // TODO: 8 - Create a DELETE endpoint mapped to "/api/v1/orders/{id}"
-        //  that takes a @PathVariable Long id and deletes the order
+    // DONE: 8 - Create a DELETE endpoint mapped to "/api/v1/orders/{id}"
+    //  that takes a @PathVariable Long id and deletes the order
+    @DeleteMapping("/api/v1/orders/{id}")
+    public void deleteOrder(
+            @PathVariable Long id
+    ) {
 
-        // TODO: 10 - Refactor all endpoints to return ResponseEntity<> with proper status codes:
-        //  - GET returns 200 (OK)
-        //  - POST returns 201 (Created)
-        //  - PUT returns 204 (No Content)
-        //  - DELETE returns 204 or 404
-        //  Hint: look at CustomerController for reference
+        ordersList.removeIf(order -> order.getId() == id);
+    }
+
+
+    // TODO: 10 - Refactor all endpoints to return ResponseEntity<> with proper status codes:
+    //  - GET returns 200 (OK)
+    //  - POST returns 201 (Created)
+    //  - PUT returns 204 (No Content)
+    //  - DELETE returns 204 or 404
+    //  Hint: look at CustomerController for reference
 }
