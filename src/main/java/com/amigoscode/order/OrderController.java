@@ -132,21 +132,36 @@ public class OrderController {
     public Order createOrder(
             @RequestBody Order order) {
 
+        ordersList.add(order);
+
         return order;
     }
 
-    // TODO: 7 - Create a PUT endpoint mapped to "/api/v1/orders/{id}"
+    // DONE: 7 - Create a PUT endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and @RequestBody Order
     //  Set the id on the order and update it
+    @PutMapping("/api/v1/orders/{id}")
+    public void updateOrder(
+            @PathVariable Long id,
+            @RequestBody Order updateOrder
+    ) {
 
-    // TODO: 8 - Create a DELETE endpoint mapped to "/api/v1/orders/{id}"
-    //  that takes a @PathVariable Long id and deletes the order
+        for (int i = 0; i < ordersList.size(); i++) {
+            if (ordersList.get(i).getId().equals(id)) {
+                updateOrder.setId(id); // ensure ID is set
+                ordersList.set(i, updateOrder); // update at index
+                return;
+            }
+        }
+    }
 
-    // TODO: 10 - Refactor all endpoints to return ResponseEntity<> with proper status codes:
-    //  - GET returns 200 (OK)
-    //  - POST returns 201 (Created)
-    //  - PUT returns 204 (No Content)
-    //  - DELETE returns 204 or 404
-    //  Hint: look at CustomerController for reference
+        // TODO: 8 - Create a DELETE endpoint mapped to "/api/v1/orders/{id}"
+        //  that takes a @PathVariable Long id and deletes the order
 
+        // TODO: 10 - Refactor all endpoints to return ResponseEntity<> with proper status codes:
+        //  - GET returns 200 (OK)
+        //  - POST returns 201 (Created)
+        //  - PUT returns 204 (No Content)
+        //  - DELETE returns 204 or 404
+        //  Hint: look at CustomerController for reference
 }
