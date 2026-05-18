@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-// TODO: 9 - Add @RequestMapping("/api/v1/orders") at the class level
+// DONE: 9 - Add @RequestMapping("/api/v1/orders") at the class level
 //  Then simplify all endpoint paths below (remove "/api/v1/orders" prefix)
 @RestController
+@RequestMapping("/api/v1/orders")
 public class OrderController {
 
     // create temporary a dummy ordersList
@@ -53,7 +54,7 @@ public class OrderController {
 
     // DONE: 1 - Create a GET endpoint mapped to "/api/v1/orders/welcome"
     //  that returns the string "Welcome to the Orders API"
-    @GetMapping("/api/v1/orders/welcome")
+    @GetMapping("/welcome")
     public String welcome() {
 
         return "Welcome to the Orders API";
@@ -62,7 +63,7 @@ public class OrderController {
     // DONE: 2 - Create a GET endpoint mapped to "/api/v1/orders/sample"
     //  that returns a single hardcoded Order object
     //  Hint: new Order(1L, "Laptop", "PENDING", 999.99, "john@mail.com", LocalDate.now(), "rush")
-    @GetMapping("/api/v1/orders/sample")
+    @GetMapping("/sample")
     public Order sample() {
 
         Order sample = new Order(
@@ -80,7 +81,7 @@ public class OrderController {
     // DONE: 3 - Create a GET endpoint mapped to "/api/v1/orders"
     //  that returns a hardcoded List of Order objects
     //  Hint: use List.of(...)
-    @GetMapping("/api/v1/orders")
+    @GetMapping()
     public List<Order> orders() {
 
         return ordersList;
@@ -89,7 +90,7 @@ public class OrderController {
     // DONE: 4 - Create a GET endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and returns an Order
     //  For now, return ((a hardcoded Order with the given id
-    @GetMapping("/api/v1/orders/{id}")
+    @GetMapping("/{id}")
     public Order getOrderById(@PathVariable Long id) {
 
         Order order = new Order(
@@ -113,7 +114,7 @@ public class OrderController {
     // DONE: 5 - Create a GET endpoint mapped to "/api/v1/orders/filter"
     //  that takes a @RequestParam(required = false) String status
     //  Return a filtered list if status is provided, otherwise return all
-    @GetMapping("/api/v1/orders/filter")
+    @GetMapping("/filter")
     public List<Order> getOrdersByStatus(
             @RequestParam(required = false) String status) {
 
@@ -128,7 +129,7 @@ public class OrderController {
 
     // DONE: 6 - Create a POST endpoint mapped to "/api/v1/orders"
     //  that takes an Order @RequestBody and returns the saved order
-    @PostMapping("/api/v1/orders")
+    @PostMapping()
     public Order createOrder(
             @RequestBody Order order) {
 
@@ -140,7 +141,7 @@ public class OrderController {
     // DONE: 7 - Create a PUT endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and @RequestBody Order
     //  Set the id on the order and update it
-    @PutMapping("/api/v1/orders/{id}")
+    @PutMapping("/{id}")
     public void updateOrder(
             @PathVariable Long id,
             @RequestBody Order updateOrder
@@ -157,7 +158,7 @@ public class OrderController {
 
     // DONE: 8 - Create a DELETE endpoint mapped to "/api/v1/orders/{id}"
     //  that takes a @PathVariable Long id and deletes the order
-    @DeleteMapping("/api/v1/orders/{id}")
+    @DeleteMapping("/{id}")
     public void deleteOrder(
             @PathVariable Long id
     ) {
